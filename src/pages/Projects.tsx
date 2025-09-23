@@ -268,9 +268,11 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <Button variant="ghost" className="w-full justify-between group mt-6">
-                    Voir les détails
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Button variant="ghost" className="w-full justify-between group mt-6" asChild>
+                    <Link to="/contact">
+                      Discuter de ce projet
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

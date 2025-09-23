@@ -30,7 +30,7 @@ const Header = () => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1">
                 <Phone className="h-3 w-3" />
-                <span>+229 XX XX XX XX</span>
+                <span>+229 01 96 75 76 39</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="h-3 w-3" />
@@ -101,8 +101,10 @@ const Header = () => {
                 EN
               </button>
             </div>
-            <Button variant="gold" size="sm">
-              {t('hero.cta.quote')}
+            <Button variant="gold" size="sm" asChild>
+              <Link to="/contact">
+                {t('hero.cta.quote')}
+              </Link>
             </Button>
           </div>
 
@@ -156,8 +158,10 @@ const Header = () => {
                     EN
                   </button>
                 </div>
-                <Button variant="gold" size="sm">
-                  {t('hero.cta.quote')}
+                <Button variant="gold" size="sm" asChild>
+                  <Link to="/contact">
+                    {t('hero.cta.quote')}
+                  </Link>
                 </Button>
               </div>
             </nav>

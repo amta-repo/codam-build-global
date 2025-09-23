@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,6 +18,7 @@ import {
   Wrench
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ServiceDetailModal from '@/components/ServiceDetailModal';
 
 // Import project images
 import projectFoundation from '@/assets/project-foundation.jpg';
@@ -28,45 +29,136 @@ import constructionFrame from '@/assets/construction-frame.jpg';
 
 const Home = () => {
   const { t } = useLanguage();
+  const [selectedService, setSelectedService] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const services = [
     {
       icon: Building2,
       title: t('services.management.title'),
       description: t('services.management.desc'),
-      color: 'from-primary to-primary-dark'
+      color: 'from-primary to-primary-dark',
+      features: [
+        'Planification et coordination',
+        'Suivi des travaux en temps réel',
+        'Gestion des équipes et sous-traitants',
+        'Respect des délais et budgets',
+        'Reporting détaillé'
+      ],
+      benefits: ['Efficacité', 'Qualité', 'Économies'],
+      process: [
+        'Analyse des besoins du projet',
+        'Élaboration du plan de gestion',
+        'Coordination des équipes',
+        'Suivi et contrôle qualité'
+      ]
     },
     {
       icon: Clipboard,
       title: t('services.feasibility.title'),
       description: t('services.feasibility.desc'),
-      color: 'from-gold to-gold-dark'
+      color: 'from-gold to-gold-dark',
+      features: [
+        'Analyse de marché approfondie',
+        'Étude technique et réglementaire',
+        'Évaluation des risques',
+        'Recommandations stratégiques',
+        'Rapport détaillé'
+      ],
+      benefits: ['Viabilité', 'Rentabilité', 'Conformité'],
+      process: [
+        'Collecte des données du site',
+        'Analyse réglementaire',
+        'Évaluation économique',
+        'Rapport de faisabilité'
+      ]
     },
     {
       icon: TrendingUp,
       title: t('services.budgeting.title'),
       description: t('services.budgeting.desc'),
-      color: 'from-construction-blue to-construction-orange'
+      color: 'from-construction-blue to-construction-orange',
+      features: [
+        'Estimation précise des coûts',
+        'Analyse comparative',
+        'Optimisation budgétaire',
+        'Suivi financier',
+        'Contrôle des dépenses'
+      ],
+      benefits: ['Précision', 'Économies', 'Transparence'],
+      process: [
+        'Analyse des spécifications',
+        'Calcul des coûts détaillés',
+        'Optimisation budgétaire',
+        'Suivi des dépenses'
+      ]
     },
     {
       icon: Shield,
       title: t('services.risk.title'),
       description: t('services.risk.desc'),
-      color: 'from-primary to-gold'
+      color: 'from-primary to-gold',
+      features: [
+        'Identification des risques',
+        'Plan de mitigation',
+        'Conformité réglementaire',
+        'Audit de sécurité',
+        'Accompagnement juridique'
+      ],
+      benefits: ['Sécurité', 'Conformité', 'Protection'],
+      process: [
+        'Audit des risques',
+        'Élaboration du plan de mitigation',
+        'Mise en œuvre des mesures',
+        'Suivi et évaluation'
+      ]
     },
     {
       icon: Users,
       title: t('services.training.title'),
       description: t('services.training.desc'),
-      color: 'from-construction-orange to-gold'
+      color: 'from-construction-orange to-gold',
+      features: [
+        'Formation technique spécialisée',
+        'Coaching des équipes',
+        'Certification professionnelle',
+        'Mise à niveau compétences',
+        'Support continu'
+      ],
+      benefits: ['Compétences', 'Productivité', 'Sécurité'],
+      process: [
+        'Évaluation des besoins',
+        'Conception du programme',
+        'Formation pratique',
+        'Certification et suivi'
+      ]
     },
     {
       icon: Award,
       title: t('services.quality.title'),
       description: t('services.quality.desc'),
-      color: 'from-gold-dark to-primary'
+      color: 'from-gold-dark to-primary',
+      features: [
+        'Contrôle qualité rigoureux',
+        'Standards internationaux',
+        'Audit de conformité',
+        'Plans de sécurité',
+        'Certification projets'
+      ],
+      benefits: ['Excellence', 'Durabilité', 'Certification'],
+      process: [
+        'Définition des standards',
+        'Contrôles qualité réguliers',
+        'Audits de conformité',
+        'Certification finale'
+      ]
     }
   ];
+
+  const handleServiceClick = (service: any) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
 
   const projects = [
     {
@@ -126,13 +218,17 @@ const Home = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="gold" size="xl" className="group">
-                  {t('hero.cta.quote')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Button variant="gold" size="xl" className="group" asChild>
+                  <Link to="/contact">
+                    {t('hero.cta.quote')}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
-                <Button variant="outline-gold" size="xl" className="group">
-                  <Phone className="mr-2 h-5 w-5" />
-                  {t('hero.cta.call')}
+                <Button variant="outline-gold" size="xl" className="group" asChild>
+                  <a href="tel:+22901967576390">
+                    <Phone className="mr-2 h-5 w-5" />
+                    {t('hero.cta.call')}
+                  </a>
                 </Button>
               </div>
 
@@ -224,7 +320,11 @@ const Home = () => {
                   <CardDescription className="text-base leading-relaxed">
                     {service.description}
                   </CardDescription>
-                  <Button variant="ghost" className="mt-4 p-0 h-auto text-primary hover:text-gold group">
+                  <Button 
+                    variant="ghost" 
+                    className="mt-4 p-0 h-auto text-primary hover:text-gold group"
+                    onClick={() => handleServiceClick(service)}
+                  >
                     {t('common.learn_more')}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -363,9 +463,11 @@ const Home = () => {
                   <Mail className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline-gold" size="xl">
-                <Phone className="mr-2 h-5 w-5" />
-                {t('hero.cta.call')}
+              <Button variant="outline-gold" size="xl" asChild>
+                <a href="tel:+22901967576390">
+                  <Phone className="mr-2 h-5 w-5" />
+                  {t('hero.cta.call')}
+                </a>
               </Button>
             </div>
             <div className="flex justify-center items-center space-x-8 text-sm">
@@ -381,6 +483,13 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Service Detail Modal */}
+      <ServiceDetailModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service={selectedService}
+      />
     </div>
   );
 };

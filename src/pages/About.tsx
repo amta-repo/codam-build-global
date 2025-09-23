@@ -94,9 +94,11 @@ const About = () => {
               <p className="text-xl text-white/90 leading-relaxed">
                 {t('about.mission.text')}
               </p>
-              <Button variant="gold" size="lg">
-                {t('common.contact_expert')}
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button variant="gold" size="lg" asChild>
+                <Link to="/contact">
+                  {t('common.contact_expert')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
             

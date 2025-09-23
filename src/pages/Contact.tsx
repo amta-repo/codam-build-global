@@ -50,8 +50,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: t('contact.info.phone'),
-      content: ['+229 XX XX XX XX', '+229 YY YY YY YY'],
-      action: 'tel:+229xxxxxxxx',
+      content: ['+229 01 96 75 76 39', '+229 01 96 75 76 39'],
+      action: 'tel:+22901967576390',
       color: 'from-gold to-gold-dark'
     },
     {
@@ -97,7 +97,7 @@ const Contact = () => {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent(`Bonjour CODAM BENIN CONSULTING, je souhaite obtenir des informations sur vos services de consulting en construction.`);
-    window.open(`https://wa.me/229xxxxxxxx?text=${message}`, '_blank');
+    window.open(`https://wa.me/22901967576390?text=${message}`, '_blank');
   };
 
   return (
@@ -302,9 +302,11 @@ const Contact = () => {
                         <p className="text-sm text-muted-foreground">Cotonou, Fidjrossè</p>
                         <p className="text-sm text-muted-foreground">Bénin</p>
                       </div>
-                      <Button variant="outline" size="sm">
-                        Voir sur Google Maps
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                      <Button variant="outline" size="sm" asChild>
+                        <a href="https://maps.google.com/?q=Cotonou,+Fidjrossè,+Bénin" target="_blank" rel="noopener noreferrer">
+                          Voir sur Google Maps
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -318,9 +320,11 @@ const Contact = () => {
                   <p className="text-sm mb-4 leading-relaxed">
                     Pour les urgences de chantier ou situations critiques
                   </p>
-                  <Button variant="destructive" size="sm" className="w-full">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Ligne d'urgence
+                  <Button variant="destructive" size="sm" className="w-full" asChild>
+                    <a href="tel:+22901967576390">
+                      <Phone className="mr-2 h-4 w-4" />
+                      Ligne d'urgence
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
