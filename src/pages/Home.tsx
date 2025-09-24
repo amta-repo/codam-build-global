@@ -252,7 +252,7 @@ const Home = () => {
               <img 
                 src={professionalSafety} 
                 alt="Professional Safety" 
-                className="rounded-lg shadow-2xl hover-lift w-full h-80 object-cover"
+                className="rounded-lg shadow-2xl hover-lift w-full"
               />
               <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md rounded-lg p-4">
                 <div className="flex items-center space-x-3">

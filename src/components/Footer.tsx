@@ -122,7 +122,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm opacity-90">
-              © 2025 CODAM BENIN CONSULTING. Tous droits réservés.
+              © 2024 CODAM BENIN CONSULTING. Tous droits réservés.
             </div>
             <div className="flex space-x-6">
               <Link to="/privacy" className="text-sm opacity-90 hover:text-gold transition-colors">
