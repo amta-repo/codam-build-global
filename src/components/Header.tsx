@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import codamLogo from '@/assets/codam-logo.png';
 
@@ -28,13 +28,45 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-1">
-                <Phone className="h-3 w-3" />
-                <span>+229 01 96 75 76 39</span>
-              </div>
-              <div className="flex items-center space-x-1">
+              <a 
+                href="https://wa.me/+22901967576639" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 hover:opacity-80 transition-opacity"
+              >
+                <MessageCircle className="h-3 w-3" />
+                <span className="hidden sm:inline">+229 01 96 75 76 39</span>
+              </a>
+              <div className="hidden md:flex items-center space-x-1">
                 <Mail className="h-3 w-3" />
                 <span>contact@codambenin.com</span>
+              </div>
+              {/* Social media icons for mobile */}
+              <div className="md:hidden flex items-center space-x-3">
+                <a 
+                  href="https://www.facebook.com/codambenin" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <Facebook className="h-3 w-3" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/codambenin" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <Instagram className="h-3 w-3" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/codambenin" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <Linkedin className="h-3 w-3" />
+                </a>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-2">

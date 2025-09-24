@@ -21,7 +21,7 @@ const translations = {
     'nav.faq': 'FAQ',
 
     // Hero Section
-    'hero.title': 'Votre partenaire de confiance en consulting et gestion de projets de construction',
+    'hero.title': 'Votre Expert en Consulting Construction',
     'hero.subtitle': 'De la planification à la réalisation, CODAM BENIN CONSULTING vous accompagne pour des projets sûrs, rentables et conformes aux normes.',
     'hero.cta.quote': 'Demandez un devis',
     'hero.cta.call': 'Appelez maintenant',
@@ -96,7 +96,7 @@ const translations = {
     'nav.faq': 'FAQ',
 
     // Hero Section
-    'hero.title': 'Your Trusted Partner in Construction Consulting & Project Management',
+    'hero.title': 'Your Construction Consulting Expert',
     'hero.subtitle': 'From planning to execution, CODAM BENIN CONSULTING ensures safe, profitable, and compliant projects.',
     'hero.cta.quote': 'Get a Quote',
     'hero.cta.call': 'Call Now',
