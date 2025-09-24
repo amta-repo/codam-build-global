@@ -99,8 +99,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 text-gold" />
                 <div className="text-sm opacity-90">
-                  <p>Cotonou, Bénin</p>
-                  <p>Quartier Fidjrossè</p>
+                  <p>F82W+4P Abomey Calavi, Atlantique Benin</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

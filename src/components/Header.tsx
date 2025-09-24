@@ -38,7 +38,7 @@ const Header = () => {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-2">
-              <span className="text-xs">Cotonou, Bénin</span>
+              <span className="text-xs">F82W+4P Abomey Calavi, Atlantique Benin</span>
             </div>
           </div>
         </div>

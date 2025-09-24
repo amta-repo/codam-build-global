@@ -44,7 +44,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: t('contact.info.address'),
-      content: ['Cotonou, Bénin', 'Quartier Fidjrossè', 'Près du carrefour principal'],
+      content: ['F82W+4P Abomey Calavi, Atlantique Benin'],
       color: 'from-primary to-primary-dark'
     },
     {
@@ -299,11 +299,11 @@ const Contact = () => {
                       <MapPin className="h-12 w-12 text-gold mx-auto" />
                       <div>
                         <p className="font-medium">CODAM BENIN CONSULTING</p>
-                        <p className="text-sm text-muted-foreground">Cotonou, Fidjrossè</p>
-                        <p className="text-sm text-muted-foreground">Bénin</p>
+                        <p className="text-sm text-muted-foreground">F82W+4P Abomey Calavi</p>
+                        <p className="text-sm text-muted-foreground">Atlantique Benin</p>
                       </div>
                       <Button variant="outline" size="sm" asChild>
-                        <a href="https://maps.google.com/?q=Cotonou,+Fidjrossè,+Bénin" target="_blank" rel="noopener noreferrer">
+                        <a href="https://maps.google.com/?q=F82W%2B4P+Abomey+Calavi,+Atlantique+Benin" target="_blank" rel="noopener noreferrer">
                           Voir sur Google Maps
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </a>
